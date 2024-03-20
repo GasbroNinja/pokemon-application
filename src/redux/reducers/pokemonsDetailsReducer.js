@@ -1,16 +1,10 @@
-const initialState = {
-  pokemons: [],
-  error: null,
-};
-
-const pokemonReducer = (state = initialState, action) => {
+const pokemonDetailReducer = (state = [], action) => {
   switch (action.type) {
     case 'FETCH_POKEMONS_SUCCESS':
-      return {
+      return [
         ...state,
-        pokemons: action.payload,
-        error: null,
-      };
+        action.payload,
+      ];
     case 'FETCH_POKEMONS_FAILURE':
       return {
         ...state,
@@ -21,4 +15,4 @@ const pokemonReducer = (state = initialState, action) => {
   }
 };
 
-export default pokemonReducer;
+export default pokemonDetailReducer;

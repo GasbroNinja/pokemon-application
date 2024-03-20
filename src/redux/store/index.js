@@ -1,8 +1,10 @@
 import { configureStore, combineReducers} from "@reduxjs/toolkit";
 import pokemonReducer from '../reducers/pokemonReducer';
+//import pokemonDetailsReducer from '../reducers/pokemonDetailsReducer';
 
 const rootReducer = combineReducers({
-  pokemons: pokemonReducer,
+  pokemonsState: pokemonReducer
+  //pokemonsDetails: pokemonDetailsReducer
 });
 
 const store = configureStore
