@@ -6,7 +6,7 @@ const PokemonDetail = ({ match }) => {
   const pokemon = useSelector((state) =>
     state.pokemons.find((p) => p.id.toString() === id)
   );
-
+  
   if (!pokemon) return <div>Loading...</div>;
 
   return (
