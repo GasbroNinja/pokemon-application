@@ -17,9 +17,11 @@ Tecnologie:
 DIPENDENZE:
 
 REACT ROUTER DOM
+
 REACT.js TOOLKIT
-REDUX
-REDUX THUNK
+
+REDUX.js
+
 
 Funzionalità:
 ● Recupero dei nomi dei primi 20 Pokémon dalla seguente API:
