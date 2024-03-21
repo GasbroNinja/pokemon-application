@@ -4,20 +4,26 @@ import { useParams } from 'react-router-dom';
 import {React,  useEffect, useState } from "react";
 import "../components/css/pokemondetail.css";
 
+// This is a functional component in React that displays the details of a single Pokemon
 const PokemonDetail = () => {
+
+  // Extract the id from the URL parameters
   const { id } = useParams();
+
+  // State variable to store the details of the Pokemon
   const [pokemonDetail, setPokemonDetail] = useState(null);
-  const pokemonData = useSelector((state) =>
-  state.pokemonsState.pokemons[id]
-  );
-  
-  
+
+  // Selected pokemon from the Redux store
+  const pokemonData = useSelector((state) => state.pokemonsState.pokemons[id]);
+
+  // useEffect hook to fetch the details of the Pokemon when the component mounts
   useEffect(() => {
     if (pokemonData?.url) { // Check if pokemon exists and if details are not already fetched
       fetchPokemonDetails(pokemonData.url);
     }
   }, [pokemonData]);
 
+  // Function to fetch the details of the Pokemon
   const fetchPokemonDetails = async (url) => {
     try {
       const response = await fetch(url);
@@ -32,6 +38,7 @@ const PokemonDetail = () => {
     }
   };
 
+  // if the pokemonDetail is null, return a loading message
   //if (!pokemon) return <div>Loading...</div>;
 
   return (

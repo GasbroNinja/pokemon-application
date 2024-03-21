@@ -1,16 +1,24 @@
 /*===== VARS =====*/
 
+/* Variables for lightening dark colors and defining specific colors */
 :root {
     --dark-color-lighten: #38c3ff;
+    /* Lightened shade of dark blue */
     --red-card: #a62121;
-    --orange-text: #371d04;
+    /* Color for error messages or alerts */
+    --brown-text: #371d04;
+    /* Color for important text or headings */
     --btn: #141414;
+    /* Color for buttons */
     --btn-hover: #3a3a3a;
+    /* Color for buttons when hovered */
     --text: #fbf7f7;
+    /* Color for regular text */
 }
 
 /*===== SOME RESETS =====*/
 
+/*  This CSS code sets the box-sizing property of all elements, including pseudo-elements before and after, to border-box. It also sets the margin and padding properties to 0. */
 *,
 ::before,
 ::after {
@@ -62,6 +70,7 @@ h1 {
     
 }
 
+/* --  CSS animation for text reveal effect on hover -- */
 h2 {
     text-transform: uppercase;
     position: relative;
@@ -140,18 +149,18 @@ h4{
 
 /*===== LIST POKEMON CSS =====*/
 
+/* Define a container class*/
 .container {
     height: 100%;
     width: 100%;
     margin: auto;
     display: flex;
     align-items: center;
-    
     justify-content: space-evenly;
     margin-bottom: 30px;
 
 }
-
+/* Define some cards classes*/
 .card {
     padding: 1rem;
     width: 300px;
@@ -176,7 +185,7 @@ h4{
     color: var(--text);
     cursor: pointer;
 }
-
+/* Define some pokemons images and infos classes*/
 .poke-image {
     border-bottom: 3px solid #fff;
     margin: 10px auto;
@@ -187,15 +196,13 @@ h4{
     transition: transform 500ms ease-in-out;
     filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
 }
-
+.card:hover .poke-image {
+    transform: translate(-1.5rem, -7rem) rotate(-20deg);
+}
 .poke-info {
     text-align: center;
     text-decoration: none;
-    color: var(--orange-text);
-}
-
-.card:hover .poke-image {
-    transform: translate(-1.5rem, -7rem) rotate(-20deg);
+    color: var(--brown-text);
 }
 
 .poke-info h2 {
@@ -211,7 +218,7 @@ h4{
     font-weight: 600;
     list-style: none;
     text-decoration: none;
-    color: var(--orange-text);
+    color: var(--brown-text);
 }
 
 .poke-info p {
@@ -219,6 +226,8 @@ h4{
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+/* Define little media query for responsiveness portable / tablet */
 
 @media screen and (max-width: 650px) {
     body {
