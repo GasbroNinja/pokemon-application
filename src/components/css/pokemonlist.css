@@ -1,7 +1,7 @@
 :root {
-    --dark-color-lighten: #f2f5ff;
+    --dark-color-lighten: #ffa58b;
     --red-card: #a62121;
-    --blue-card: #4bb7e6;
+    --orange-text: #371d04;
     --btn: #141414;
     --btn-hover: #3a3a3a;
     --text: #fbf7f7;
@@ -26,18 +26,13 @@ body {
     font-family: "Montserrat", sans-serif;
 }
 
-button {
-    font-family: "Montserrat", sans-serif;
-    display: inline-block;
-    border: none;
-    outline: none;
-    border-radius: 0.2rem;
-    color: var(--text);
-    cursor: pointer;
-}
-
 a {
     text-decoration: none;
+}
+
+.link-unstyled{
+    text-decoration: none;
+    color: inherit;
 }
 
 img {
@@ -46,14 +41,87 @@ img {
     user-select: none;
 }
 
+h1 {
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 5px;
+    font-family: sans-serif;
+    display: table;
+    margin: 10px auto;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: .6s;
+    color: #310e00;
+}
+
+h2 {
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 5px;
+    font-family: sans-serif;
+    display: flex;
+    text-align: center;
+    margin: 10px auto;
+    margin-top: 70px;
+    cursor: pointer;
+    transition: .6s;
+}
+
+h2:before,
+h2:after {
+    content: attr(data-text);
+    transition: .9s;
+}
+
+h2:before {
+    left: 0;
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    text-shadow:
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px,
+        0px 0px;
+    -webkit-mask: repeating-linear-gradient(45deg, transparent 0 3px, rgba(0, 0, 0, 0.5) 0 6px);
+    mask: repeating-linear-gradient(45deg, transparent 0 3px, rgba(0, 0, 0, 0.5) 0 6px);
+}
+
+h2:hover {
+    transform: translate(0px, -10px);
+    color: var(--btn)
+}
+
+h2:hover:before {
+    text-shadow:
+        1px 1px,
+        2px 2px,
+        3px 3px,
+        4px 4px,
+        5px 5px,
+        6px 6px,
+        7px 7px,
+        8px 8px,
+        9px 9px,
+        10px 10px;
+}
+
 /*===== CARD =====*/
 .container {
     height: 100%;
     width: 850px;
     margin: auto;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-evenly;
+    margin-bottom: 30px;
 }
 
 .card {
@@ -72,7 +140,7 @@ img {
     background: var(--blue-card);
 }
 
-.product-image {
+.poke-image {
     height: 230px;
     width: 100%;
     transform: translate(0, -1.5rem);
@@ -80,20 +148,33 @@ img {
     filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
 }
 
-.product-info {
+.poke-info {
     text-align: center;
+    text-decoration: none;
+    color: var(--orange-text);
 }
 
 .card:hover .product-image {
     transform: translate(-1.5rem, -7rem) rotate(-20deg);
 }
 
-.product-info h2 {
+.poke-info h2 {
     font-size: 1.4rem;
-    font-weight: 600;
+    font-weight: 400;
+    list-style: none;
+    text-decoration: none;
+    color: var(--text);
 }
 
-.product-info p {
+.poke-info h2:hover {
+    font-size: 1.8rem;
+    font-weight: 600;
+    list-style: none;
+    text-decoration: none;
+    color: var(--orange-text);
+}
+
+.poke-info p {
     margin: 0.4rem;
     font-size: 0.8rem;
     font-weight: 600;
