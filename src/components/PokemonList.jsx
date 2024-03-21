@@ -23,31 +23,37 @@ const PokemonList = () => {
   }, [pokemons]); */
 
   return (
-    <div>
+    <div className="main-container">
       <h1>Pokémon List</h1>
+      <h4>Click Pokemon's names for detail</h4>
       <main className="container">
-        <section className="">
-          <div className="poke-image">
+        <section className="card">
+          <div className="">
             {pokeimages.map((pokeimages) => (
               <PokemonImage key={pokeimages.id} pokeimages={pokeimages} />
             ))}
           </div>
         </section>
-        <ul>
-          {pokemons.length > 0 ? (
-            pokemons.map((pokemon, idx) => (
-              <div className="poke-info">
-                <h2>
-                  <Link className="link-unstyled" to={`/pokemon/${idx}`}>
-                    {pokemon.name}
-                  </Link>
-                </h2>
-              </div>
-            ))
-          ) : (
-            <p>Loading...</p>
-          )}
-        </ul>
+
+        <main className="card2">
+          <ul>
+            {pokemons.length > 0 ? (
+              pokemons.map((pokemon, idx) => (
+                <div className="poke-info">
+                  <h2>
+                    <li>
+                      <Link className="link-unstyled " to={`/pokemon/${idx}`}>
+                        {pokemon.name}
+                      </Link>
+                    </li>
+                  </h2>
+                </div>
+              ))
+            ) : (
+              <p>Loading...</p>
+            )}
+          </ul>
+        </main>
       </main>
     </div>
   );

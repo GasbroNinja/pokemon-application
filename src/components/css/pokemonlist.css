@@ -1,5 +1,7 @@
+/*===== VARS =====*/
+
 :root {
-    --dark-color-lighten: #ffa58b;
+    --dark-color-lighten: #38c3ff;
     --red-card: #a62121;
     --orange-text: #371d04;
     --btn: #141414;
@@ -7,7 +9,8 @@
     --text: #fbf7f7;
 }
 
-/*===== RESET =====*/
+/*===== SOME RESETS =====*/
+
 *,
 ::before,
 ::after {
@@ -20,11 +23,13 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-color: var(--dark-color-lighten);
     font-family: "Montserrat", sans-serif;
 }
+
+
 
 a {
     text-decoration: none;
@@ -47,21 +52,24 @@ h1 {
     letter-spacing: 5px;
     font-family: sans-serif;
     display: table;
-    margin: 10px auto;
+    margin: 30px auto;
     margin-top: 30px;
+    border: 5px solid #a62121;
+    padding: 20px;
     cursor: pointer;
     transition: .6s;
     color: #310e00;
+    background-color: #38c3ff;
 }
 
 h2 {
+    text-transform: uppercase;
     position: relative;
     font-size: 6em;
     letter-spacing: 5px;
     font-family: sans-serif;
     display: flex;
-    text-align: center;
-    margin: 10px auto;
+    margin: auto;
     margin-top: 70px;
     cursor: pointer;
     transition: .6s;
@@ -112,23 +120,42 @@ h2:hover:before {
         10px 10px;
 }
 
-/*===== CARD =====*/
+h3{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+h4{
+    font-size: 50px;
+    color: #000;
+    background-color: #38c3ff;
+    border: 3px solid #a62121;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/*===== LIST POKEMON CSS =====*/
+
 .container {
     height: 100%;
-    width: 850px;
+    width: 100%;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
+
     justify-content: space-evenly;
     margin-bottom: 30px;
+
 }
 
 .card {
-    position: relative;
     padding: 1rem;
-    width: 350px;
-    height: 450px;
+    width: 300px;
+    height: 100%;
     box-shadow: -1px 15px 30px -12px #202020;
     border-radius: 0.9rem;
     background-color: var(--red-card);
@@ -136,13 +163,26 @@ h2:hover:before {
     cursor: pointer;
 }
 
-.card-blue {
-    background: var(--blue-card);
+.card2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    width: 300px;
+    height: 100%;
+    box-shadow: -1px 15px 30px -12px #202020;
+    border-radius: 0.9rem;
+    background-color: var(--red-card);
+    color: var(--text);
+    cursor: pointer;
 }
 
 .poke-image {
+    border-bottom: 3px solid #fff;
+    margin: 10px auto;
+    padding: 0;
     height: 230px;
-    width: 100%;
+    width: 230px;
     transform: translate(0, -1.5rem);
     transition: transform 500ms ease-in-out;
     filter: drop-shadow(5px 10px 15px rgba(8, 9, 13, 0.4));
@@ -180,51 +220,7 @@ h2:hover:before {
     font-weight: 600;
 }
 
-.price {
-    font-size: 1.2rem;
-    font-weight: 500;
-}
-
-.btn {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 0.8rem;
-}
-
-.buy-btn {
-    background-color: var(--btn);
-    padding: 0.6rem 3.5rem;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: 300ms ease;
-}
-
-.buy-btn:hover {
-    background-color: var(--btn-hover);
-}
-
-.fav {
-    box-sizing: border-box;
-    background: #fff;
-    padding: 0.5rem 0.5rem;
-    border: 1px solid #000;
-    display: grid;
-    place-items: center;
-}
-
-.svg {
-    height: 25px;
-    width: 25px;
-    fill: #fff;
-    transition: all 500ms ease;
-}
-
-.fav:hover .svg {
-    fill: #000;
-}
-
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 650px) {
     body {
         height: auto;
     }
@@ -234,5 +230,9 @@ h2:hover:before {
         width: 100%;
         flex-direction: column;
         gap: 3rem;
+    }
+
+    h1{
+        font-size: 50px;
     }
 }

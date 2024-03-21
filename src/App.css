@@ -1,0 +1,10 @@
+.App{
+    height: 100%;
+    background-image: url("../src/components/images/bg2.jpg");
+    background-position: center;
+    background-repeat: repeat;
+    object-fit: cover;
+    background-size: 150%;
+
+}
+
