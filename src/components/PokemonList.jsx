@@ -25,7 +25,7 @@ const PokemonList = () => {
   return (
     <div className="main-container">
       <h1>Pokémon List</h1>
-      <h4>Click Pokemon's names for detail</h4>
+      <h5>Click Pokemon's names for detail</h5>
       <main className="container">
         <section className="card">
           <div className="">
@@ -42,7 +42,7 @@ const PokemonList = () => {
                 <div className="poke-info">
                   <h2>
                     <li>
-                      <Link className="link-unstyled " to={`/pokemon/${idx}`}>
+                      <Link className="link-unstyled" to={`/pokemon/${idx}`}>
                         {pokemon.name}
                       </Link>
                     </li>

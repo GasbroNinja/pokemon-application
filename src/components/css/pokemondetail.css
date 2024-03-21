@@ -35,7 +35,7 @@ a {
     text-decoration: none;
 }
 
-.link-unstyled{
+.link-unstyled {
     text-decoration: none;
     color: inherit;
 }
@@ -47,6 +47,7 @@ img {
 }
 
 h1 {
+    text-transform: uppercase;
     position: relative;
     font-size: 6em;
     letter-spacing: 5px;
@@ -58,8 +59,8 @@ h1 {
     padding: 20px;
     cursor: pointer;
     transition: .6s;
-    color: #310e00;
-    
+    color: #21201f;
+    background-color: #38c3ff;
 }
 
 h2 {
@@ -103,7 +104,7 @@ h2:before {
 
 h2:hover {
     transform: translate(0px, -10px);
-    color: var(--btn)
+    color: var(--dark-color-lighten)
 }
 
 h2:hover:before {
@@ -120,17 +121,45 @@ h2:hover:before {
         10px 10px;
 }
 
-h3{
+h3 {
+    font-size: 100px;
     margin: 0;
     padding: 0;
     text-align: center;
     margin-bottom: 10px;
 }
 
-h4{
+h4 {
     font-size: 50px;
-    color: #000;
+    color: #ef1717;
+    background-color: #012c3e;
+    border: 3px solid #a62121;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 10px rgb(95, 131, 202);
+    border: 4px solid #38c3ff;
+}
+
+h5 {
+    font-size: 40px;
+    color: #000000;
     background-color: #38c3ff;
+    border: 3px solid #a62121;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 10px rgb(95, 131, 202);
+    border: 4px solid #a62121;
+}
+
+ul{
+    list-style-type: none;
+    text-align: center;
+    font-size: 25px;
+    color: #000;
     border: 3px solid #a62121;
     margin: 0;
     padding: 0;
@@ -138,7 +167,7 @@ h4{
     margin-bottom: 10px;
 }
 
-/*===== LIST POKEMON CSS =====*/
+/*===== DETAIL POKEMON CSS =====*/
 
 .container {
     height: 100%;
@@ -146,10 +175,19 @@ h4{
     margin: auto;
     display: flex;
     align-items: center;
-    
     justify-content: space-evenly;
     margin-bottom: 30px;
+    align-items: flex-start
+}
 
+.container_2 {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
 }
 
 .card {
@@ -163,19 +201,44 @@ h4{
     cursor: pointer;
 }
 
-.card2 {
-    text-align: center;
+.name_value_type_ability {
+    text-transform: capitalize;
+    display: inline-flex;
+    margin: 5px 5px;
+    justify-content: center;
+    color: #ffb17c;
+    font-weight: 600;
+    font-size: 30px;
+    padding: 3px;
+    text-shadow: 3px 3px 10px rgb(37, 60, 105);
+    background-color: #590000;
+}
+
+.name_value_type_ability2 {
+    text-transform: capitalize;
     display: flex;
     justify-content: center;
-    padding: 1rem;
-    width: 300px;
-    height: 100%;
-    box-shadow: -1px 15px 30px -12px #202020;
-    border-radius: 0.9rem;
-    background-color: var(--red-card);
-    color: var(--text);
-    cursor: pointer;
+    color: #38c3ff;
+    font-weight: 600;
+    font-size: 30px;
+    padding: 3px;
+    text-shadow: 3px 3px 10px rgb(37, 60, 105);
+    
 }
+
+.value_stat {
+    display: inline-flex;
+    justify-content: center;
+    color: #ff8838;
+    font-weight: 600;
+    font-size: 30px;
+    padding: 10px;
+    background-color: #4e1301;
+    text-shadow: 3px 3px 10px rgb(37, 60, 105);
+    border: 3px solid #38c3ff;
+    border-radius: 20px;
+}
+
 
 .poke-image {
     border-bottom: 3px solid #fff;
@@ -195,30 +258,9 @@ h4{
 }
 
 .card:hover .poke-image {
-    transform: translate(-1.5rem, -7rem) rotate(-20deg);
+    transform: translate(0rem, 1rem);
 }
 
-.poke-info h2 {
-    font-size: 1.4rem;
-    font-weight: 400;
-    list-style: none;
-    text-decoration: none;
-    color: var(--text);
-}
-
-.poke-info h2:hover {
-    font-size: 1.8rem;
-    font-weight: 600;
-    list-style: none;
-    text-decoration: none;
-    color: var(--orange-text);
-}
-
-.poke-info p {
-    margin: 0.4rem;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
 
 @media screen and (max-width: 650px) {
     body {
@@ -232,7 +274,7 @@ h4{
         gap: 3rem;
     }
 
-    h1{
+    h1 {
         font-size: 50px;
     }
 }
